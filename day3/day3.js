@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-let loadData = fs.readFileSync('input.txt', 'utf8');
+const loadData = fs.readFileSync('input.txt', 'utf8');
 
 // Parse the data
 const data = loadData.split('\n').map(row => {
@@ -39,7 +39,7 @@ items.forEach(item => {
   isDuplicate[item] = (isDuplicate[item] || 0) + 1;
 })
 
-console.log('Result of duplicates:', duplicates);
+console.log('Part 1 result:', duplicates);
 
 // Part 2
 let itemsData = {}
@@ -69,4 +69,4 @@ Object.keys(itemsData).forEach(item => {
   }
 });
 
-console.log('The ID is:', Object.keys(ids)[0]);
+console.log('Part 2 result:', Object.keys(ids)[0].substr(1));
